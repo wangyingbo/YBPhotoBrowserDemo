@@ -15,9 +15,9 @@
 		033D7F1020BCED2500D3A091 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F0F20BCED2500D3A091 /* main.m */; };
 		033D7F1A20BCED2500D3A091 /* YBPhotoBrowserDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F1920BCED2500D3A091 /* YBPhotoBrowserDemoTests.m */; };
 		033D7F2520BCED2500D3A091 /* YBPhotoBrowserDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F2420BCED2500D3A091 /* YBPhotoBrowserDemoUITests.m */; };
-		033D7F3920BD445F00D3A091 /* ElPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F3420BD445E00D3A091 /* ElPhotoBrowserView.m */; };
+		033D7F3920BD445F00D3A091 /* YBPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F3420BD445E00D3A091 /* YBPhotoBrowserView.m */; };
 		033D7F3A20BD445F00D3A091 /* YBBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F3520BD445E00D3A091 /* YBBrowser.m */; };
-		033D7F3B20BD445F00D3A091 /* ElPhotoBrowserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F3720BD445F00D3A091 /* ElPhotoBrowserCollectionViewCell.m */; };
+		033D7F3B20BD445F00D3A091 /* YBPhotoBrowserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F3720BD445F00D3A091 /* YBPhotoBrowserCollectionViewCell.m */; };
 		0DE51C0CE71912A64AAEDDA5 /* libPods-YBPhotoBrowserDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6593CA3CB11D9C90B05BCAD6 /* libPods-YBPhotoBrowserDemoUITests.a */; };
 		714ED03CF31BFF8D9274B7C2 /* libPods-YBPhotoBrowserDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F163728EC12824A1A645ED /* libPods-YBPhotoBrowserDemo.a */; };
 		EE4BFA30E43951B721C7E34F /* libPods-YBPhotoBrowserDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 964C452E2B463F5360B39022 /* libPods-YBPhotoBrowserDemoTests.a */; };
@@ -57,11 +57,11 @@
 		033D7F2020BCED2500D3A091 /* YBPhotoBrowserDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YBPhotoBrowserDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		033D7F2420BCED2500D3A091 /* YBPhotoBrowserDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBPhotoBrowserDemoUITests.m; sourceTree = "<group>"; };
 		033D7F2620BCED2500D3A091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		033D7F3320BD445E00D3A091 /* ElPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElPhotoBrowserView.h; sourceTree = "<group>"; };
-		033D7F3420BD445E00D3A091 /* ElPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElPhotoBrowserView.m; sourceTree = "<group>"; };
+		033D7F3320BD445E00D3A091 /* YBPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoBrowserView.h; sourceTree = "<group>"; };
+		033D7F3420BD445E00D3A091 /* YBPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoBrowserView.m; sourceTree = "<group>"; };
 		033D7F3520BD445E00D3A091 /* YBBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBBrowser.m; sourceTree = "<group>"; };
-		033D7F3620BD445F00D3A091 /* ElPhotoBrowserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElPhotoBrowserCollectionViewCell.h; sourceTree = "<group>"; };
-		033D7F3720BD445F00D3A091 /* ElPhotoBrowserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElPhotoBrowserCollectionViewCell.m; sourceTree = "<group>"; };
+		033D7F3620BD445F00D3A091 /* YBPhotoBrowserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPhotoBrowserCollectionViewCell.h; sourceTree = "<group>"; };
+		033D7F3720BD445F00D3A091 /* YBPhotoBrowserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoBrowserCollectionViewCell.m; sourceTree = "<group>"; };
 		033D7F3820BD445F00D3A091 /* YBBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBBrowser.h; sourceTree = "<group>"; };
 		06B883DB35B1A67A11D813A6 /* Pods-YBPhotoBrowserDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBPhotoBrowserDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YBPhotoBrowserDemoTests/Pods-YBPhotoBrowserDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		14C9ACB09BB2640986A675B7 /* Pods-YBPhotoBrowserDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBPhotoBrowserDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YBPhotoBrowserDemo/Pods-YBPhotoBrowserDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,10 +164,10 @@
 			children = (
 				033D7F3820BD445F00D3A091 /* YBBrowser.h */,
 				033D7F3520BD445E00D3A091 /* YBBrowser.m */,
-				033D7F3620BD445F00D3A091 /* ElPhotoBrowserCollectionViewCell.h */,
-				033D7F3720BD445F00D3A091 /* ElPhotoBrowserCollectionViewCell.m */,
-				033D7F3320BD445E00D3A091 /* ElPhotoBrowserView.h */,
-				033D7F3420BD445E00D3A091 /* ElPhotoBrowserView.m */,
+				033D7F3620BD445F00D3A091 /* YBPhotoBrowserCollectionViewCell.h */,
+				033D7F3720BD445F00D3A091 /* YBPhotoBrowserCollectionViewCell.m */,
+				033D7F3320BD445E00D3A091 /* YBPhotoBrowserView.h */,
+				033D7F3420BD445E00D3A091 /* YBPhotoBrowserView.m */,
 			);
 			path = YBPhotoBrowser;
 			sourceTree = "<group>";
@@ -485,9 +485,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				033D7F0520BCED2400D3A091 /* ViewController.m in Sources */,
-				033D7F3920BD445F00D3A091 /* ElPhotoBrowserView.m in Sources */,
+				033D7F3920BD445F00D3A091 /* YBPhotoBrowserView.m in Sources */,
 				033D7F1020BCED2500D3A091 /* main.m in Sources */,
-				033D7F3B20BD445F00D3A091 /* ElPhotoBrowserCollectionViewCell.m in Sources */,
+				033D7F3B20BD445F00D3A091 /* YBPhotoBrowserCollectionViewCell.m in Sources */,
 				033D7F0220BCED2400D3A091 /* AppDelegate.m in Sources */,
 				033D7F3A20BD445F00D3A091 /* YBBrowser.m in Sources */,
 			);

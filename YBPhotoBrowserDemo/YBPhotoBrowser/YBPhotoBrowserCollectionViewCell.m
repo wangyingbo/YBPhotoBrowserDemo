@@ -1,17 +1,17 @@
 //
 //  YBPhotoBrowserCollectionViewCell.m
-//  RACMVVMDemo
+//  YBPhotoBrowserDemo
 //
 //  Created by 王迎博 on 2018/4/12.
 //  Copyright © 2018年 王迎博. All rights reserved.
 //
 
-#import "ElPhotoBrowserCollectionViewCell.h"
+#import "YBPhotoBrowserCollectionViewCell.h"
 #import <MBProgressHUD.h>
 #import <UIImageView+WebCache.h>
 #define ImageW [UIScreen mainScreen].bounds.size.width - 10
 
-@interface ElPhotoBrowserCollectionViewCell()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
+@interface YBPhotoBrowserCollectionViewCell()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -22,7 +22,7 @@
 @end
 
 
-@implementation ElPhotoBrowserCollectionViewCell
+@implementation YBPhotoBrowserCollectionViewCell
 {
     CGRect  imgOriginF; //在中心时候的坐标
     CGPoint imgOriginCenter;
@@ -177,9 +177,20 @@
     [self hiddenAction];
 }
 
+/**
+ 双击时的手势
+
+ @param ges 手势
+ */
 - (void)imageViewDoubleTapAction:(UITapGestureRecognizer *)ges
 {
-    
+    [UIView animateWithDuration:.5 animations:^{
+        if (self.scrollView.zoomScale == 1) {
+            [self.scrollView setZoomScale:2];
+        }else {
+            [self.scrollView setZoomScale:1];
+        }
+    }];
 }
 
 - (void)setSmallURL:(NSString *)smallURL
@@ -217,6 +228,11 @@
     }];
 }
 
+/**
+ 更新图片frame
+
+ @param image image大小改变
+ */
 - (void)updateImageViewWithImage:(UIImage *)image
 {
     self.imageView.image = image;
