@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		033D7F0220BCED2400D3A091 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F0120BCED2400D3A091 /* AppDelegate.m */; };
+		033D7F0520BCED2400D3A091 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F0420BCED2400D3A091 /* ViewController.m */; };
+		033D7F0820BCED2400D3A091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033D7F0620BCED2400D3A091 /* Main.storyboard */; };
+		033D7F0A20BCED2500D3A091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033D7F0920BCED2500D3A091 /* Assets.xcassets */; };
+		033D7F0D20BCED2500D3A091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033D7F0B20BCED2500D3A091 /* LaunchScreen.storyboard */; };
+		033D7F1020BCED2500D3A091 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F0F20BCED2500D3A091 /* main.m */; };
+		033D7F1A20BCED2500D3A091 /* YBPhotoBrowserDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F1920BCED2500D3A091 /* YBPhotoBrowserDemoTests.m */; };
+		033D7F2520BCED2500D3A091 /* YBPhotoBrowserDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 033D7F2420BCED2500D3A091 /* YBPhotoBrowserDemoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		033D7F1620BCED2500D3A091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 033D7EF520BCED2400D3A091 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 033D7EFC20BCED2400D3A091;
+			remoteInfo = YBPhotoBrowserDemo;
+		};
+		033D7F2120BCED2500D3A091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 033D7EF520BCED2400D3A091 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 033D7EFC20BCED2400D3A091;
+			remoteInfo = YBPhotoBrowserDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		033D7EFD20BCED2400D3A091 /* YBPhotoBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBPhotoBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		033D7F0020BCED2400D3A091 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		033D7F0120BCED2400D3A091 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		033D7F0320BCED2400D3A091 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		033D7F0420BCED2400D3A091 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		033D7F0720BCED2400D3A091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		033D7F0920BCED2500D3A091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		033D7F0C20BCED2500D3A091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		033D7F0E20BCED2500D3A091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		033D7F0F20BCED2500D3A091 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		033D7F1520BCED2500D3A091 /* YBPhotoBrowserDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YBPhotoBrowserDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		033D7F1920BCED2500D3A091 /* YBPhotoBrowserDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBPhotoBrowserDemoTests.m; sourceTree = "<group>"; };
+		033D7F1B20BCED2500D3A091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		033D7F2020BCED2500D3A091 /* YBPhotoBrowserDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YBPhotoBrowserDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		033D7F2420BCED2500D3A091 /* YBPhotoBrowserDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBPhotoBrowserDemoUITests.m; sourceTree = "<group>"; };
+		033D7F2620BCED2500D3A091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		033D7EFA20BCED2400D3A091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		033D7F1220BCED2500D3A091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		033D7F1D20BCED2500D3A091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		033D7EF420BCED2400D3A091 = {
+			isa = PBXGroup;
+			children = (
+				033D7EFF20BCED2400D3A091 /* YBPhotoBrowserDemo */,
+				033D7F1820BCED2500D3A091 /* YBPhotoBrowserDemoTests */,
+				033D7F2320BCED2500D3A091 /* YBPhotoBrowserDemoUITests */,
+				033D7EFE20BCED2400D3A091 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		033D7EFE20BCED2400D3A091 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				033D7EFD20BCED2400D3A091 /* YBPhotoBrowserDemo.app */,
+				033D7F1520BCED2500D3A091 /* YBPhotoBrowserDemoTests.xctest */,
+				033D7F2020BCED2500D3A091 /* YBPhotoBrowserDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		033D7EFF20BCED2400D3A091 /* YBPhotoBrowserDemo */ = {
+			isa = PBXGroup;
+			children = (
+				033D7F0020BCED2400D3A091 /* AppDelegate.h */,
+				033D7F0120BCED2400D3A091 /* AppDelegate.m */,
+				033D7F0320BCED2400D3A091 /* ViewController.h */,
+				033D7F0420BCED2400D3A091 /* ViewController.m */,
+				033D7F0620BCED2400D3A091 /* Main.storyboard */,
+				033D7F0920BCED2500D3A091 /* Assets.xcassets */,
+				033D7F0B20BCED2500D3A091 /* LaunchScreen.storyboard */,
+				033D7F0E20BCED2500D3A091 /* Info.plist */,
+				033D7F0F20BCED2500D3A091 /* main.m */,
+			);
+			path = YBPhotoBrowserDemo;
+			sourceTree = "<group>";
+		};
+		033D7F1820BCED2500D3A091 /* YBPhotoBrowserDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				033D7F1920BCED2500D3A091 /* YBPhotoBrowserDemoTests.m */,
+				033D7F1B20BCED2500D3A091 /* Info.plist */,
+			);
+			path = YBPhotoBrowserDemoTests;
+			sourceTree = "<group>";
+		};
+		033D7F2320BCED2500D3A091 /* YBPhotoBrowserDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				033D7F2420BCED2500D3A091 /* YBPhotoBrowserDemoUITests.m */,
+				033D7F2620BCED2500D3A091 /* Info.plist */,
+			);
+			path = YBPhotoBrowserDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		033D7EFC20BCED2400D3A091 /* YBPhotoBrowserDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 033D7F2920BCED2500D3A091 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserDemo" */;
+			buildPhases = (
+				033D7EF920BCED2400D3A091 /* Sources */,
+				033D7EFA20BCED2400D3A091 /* Frameworks */,
+				033D7EFB20BCED2400D3A091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YBPhotoBrowserDemo;
+			productName = YBPhotoBrowserDemo;
+			productReference = 033D7EFD20BCED2400D3A091 /* YBPhotoBrowserDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		033D7F1420BCED2500D3A091 /* YBPhotoBrowserDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 033D7F2C20BCED2500D3A091 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserDemoTests" */;
+			buildPhases = (
+				033D7F1120BCED2500D3A091 /* Sources */,
+				033D7F1220BCED2500D3A091 /* Frameworks */,
+				033D7F1320BCED2500D3A091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				033D7F1720BCED2500D3A091 /* PBXTargetDependency */,
+			);
+			name = YBPhotoBrowserDemoTests;
+			productName = YBPhotoBrowserDemoTests;
+			productReference = 033D7F1520BCED2500D3A091 /* YBPhotoBrowserDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		033D7F1F20BCED2500D3A091 /* YBPhotoBrowserDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 033D7F2F20BCED2500D3A091 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserDemoUITests" */;
+			buildPhases = (
+				033D7F1C20BCED2500D3A091 /* Sources */,
+				033D7F1D20BCED2500D3A091 /* Frameworks */,
+				033D7F1E20BCED2500D3A091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				033D7F2220BCED2500D3A091 /* PBXTargetDependency */,
+			);
+			name = YBPhotoBrowserDemoUITests;
+			productName = YBPhotoBrowserDemoUITests;
+			productReference = 033D7F2020BCED2500D3A091 /* YBPhotoBrowserDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		033D7EF520BCED2400D3A091 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "王颖博";
+				TargetAttributes = {
+					033D7EFC20BCED2400D3A091 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					033D7F1420BCED2500D3A091 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 033D7EFC20BCED2400D3A091;
+					};
+					033D7F1F20BCED2500D3A091 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 033D7EFC20BCED2400D3A091;
+					};
+				};
+			};
+			buildConfigurationList = 033D7EF820BCED2400D3A091 /* Build configuration list for PBXProject "YBPhotoBrowserDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 033D7EF420BCED2400D3A091;
+			productRefGroup = 033D7EFE20BCED2400D3A091 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				033D7EFC20BCED2400D3A091 /* YBPhotoBrowserDemo */,
+				033D7F1420BCED2500D3A091 /* YBPhotoBrowserDemoTests */,
+				033D7F1F20BCED2500D3A091 /* YBPhotoBrowserDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		033D7EFB20BCED2400D3A091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				033D7F0D20BCED2500D3A091 /* LaunchScreen.storyboard in Resources */,
+				033D7F0A20BCED2500D3A091 /* Assets.xcassets in Resources */,
+				033D7F0820BCED2400D3A091 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		033D7F1320BCED2500D3A091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		033D7F1E20BCED2500D3A091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		033D7EF920BCED2400D3A091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				033D7F0520BCED2400D3A091 /* ViewController.m in Sources */,
+				033D7F1020BCED2500D3A091 /* main.m in Sources */,
+				033D7F0220BCED2400D3A091 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		033D7F1120BCED2500D3A091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				033D7F1A20BCED2500D3A091 /* YBPhotoBrowserDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		033D7F1C20BCED2500D3A091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				033D7F2520BCED2500D3A091 /* YBPhotoBrowserDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		033D7F1720BCED2500D3A091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 033D7EFC20BCED2400D3A091 /* YBPhotoBrowserDemo */;
+			targetProxy = 033D7F1620BCED2500D3A091 /* PBXContainerItemProxy */;
+		};
+		033D7F2220BCED2500D3A091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 033D7EFC20BCED2400D3A091 /* YBPhotoBrowserDemo */;
+			targetProxy = 033D7F2120BCED2500D3A091 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		033D7F0620BCED2400D3A091 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				033D7F0720BCED2400D3A091 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		033D7F0B20BCED2500D3A091 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				033D7F0C20BCED2500D3A091 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		033D7F2720BCED2500D3A091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		033D7F2820BCED2500D3A091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		033D7F2A20BCED2500D3A091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		033D7F2B20BCED2500D3A091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		033D7F2D20BCED2500D3A091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YBPhotoBrowserDemo.app/YBPhotoBrowserDemo";
+			};
+			name = Debug;
+		};
+		033D7F2E20BCED2500D3A091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YBPhotoBrowserDemo.app/YBPhotoBrowserDemo";
+			};
+			name = Release;
+		};
+		033D7F3020BCED2500D3A091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YBPhotoBrowserDemo;
+			};
+			name = Debug;
+		};
+		033D7F3120BCED2500D3A091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YBPhotoBrowserDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		033D7EF820BCED2400D3A091 /* Build configuration list for PBXProject "YBPhotoBrowserDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				033D7F2720BCED2500D3A091 /* Debug */,
+				033D7F2820BCED2500D3A091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		033D7F2920BCED2500D3A091 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				033D7F2A20BCED2500D3A091 /* Debug */,
+				033D7F2B20BCED2500D3A091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		033D7F2C20BCED2500D3A091 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				033D7F2D20BCED2500D3A091 /* Debug */,
+				033D7F2E20BCED2500D3A091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		033D7F2F20BCED2500D3A091 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				033D7F3020BCED2500D3A091 /* Debug */,
+				033D7F3120BCED2500D3A091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 033D7EF520BCED2400D3A091 /* Project object */;
+}
