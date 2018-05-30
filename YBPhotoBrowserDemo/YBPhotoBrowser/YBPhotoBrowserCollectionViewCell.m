@@ -2,7 +2,7 @@
 //  YBPhotoBrowserCollectionViewCell.m
 //  YBPhotoBrowserDemo
 //
-//  Created by 王迎博 on 2018/4/12.
+//  Created by 王迎博 on 2018/5/29.
 //  Copyright © 2018年 王迎博. All rights reserved.
 //
 
@@ -35,7 +35,7 @@
 #pragma mark - lazy
 - (MBProgressHUD *)hud
 {
-    if (_hud == nil) {
+    if (!_hud) {
         _hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
         _hud.mode = MBProgressHUDModeAnnularDeterminate;
         _hud.contentColor = [UIColor whiteColor];
@@ -47,7 +47,7 @@
 
 - (UIImageView *)imageV
 {
-    if(_imageV == nil)
+    if(!_imageV)
     {
         _imageV = [[UIImageView alloc] init];
         [self.scrollView addSubview:_imageV];
@@ -61,7 +61,7 @@
 
 - (UIScrollView *)scrollView
 {
-    if(_scrollView == nil)
+    if(!_scrollView)
     {
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.delegate = self;
@@ -270,7 +270,10 @@
  */
 - (void)hiddenAction
 {
-    [self.delegate hiddenAction:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hiddenAction)]) {
+        [self.delegate hiddenAction:self];
+    }
+    
 }
 
 
