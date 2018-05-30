@@ -123,18 +123,25 @@
     CGPoint movePoint = [ges locationInView:self.window];
     switch (ges.state) {
         case UIGestureRecognizerStateBegan:
+            //不加到runloop的原因是当拖动停顿固定时间默认回原位，拖拽后立即放手，即为diss
             _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(redurecd) userInfo:nil repeats:YES];
             moveImgFirstPoint = [ges locationInView:self.window];
             break;
         case UIGestureRecognizerStateChanged:
         {
             //缩放比例(背景的渐变比例)
-            CGFloat offset = fmin((1 - movePoint.y/([UIScreen mainScreen].bounds.size.height)) * 2, 1);
+            CGFloat v = movePoint.y/([UIScreen mainScreen].bounds.size.height);
+            CGFloat offset = fmin((1 - (v>moveImgFirstPoint.y/([UIScreen mainScreen].bounds.size.height)?v:(1-v))) * 2, 1);
+            //CGFloat offset = fmin((1 - v) * 2, 1);
             //设置最小的缩放比例为0.5
             CGFloat offset_y = fmax(offset, 0.5);
-            
             CGAffineTransform transform1 = CGAffineTransformMakeTranslation((movePoint.x - moveImgFirstPoint.x), (movePoint.y - moveImgFirstPoint.y));
-            self.imageV.transform = CGAffineTransformScale(transform1, offset_y, offset_y);
+            
+            CGFloat kScreenH = [UIScreen mainScreen].bounds.size.height;
+            CGFloat m = offset_y*(1+(log10(imgOriginF.size.height)/(CGFloat)log10(kScreenH)*0.713));
+            CGFloat scaleV = (imgOriginF.size.height>kScreenH)?(m>1?1:m):offset_y;
+            
+            self.imageV.transform = CGAffineTransformScale(transform1, scaleV, scaleV);
             
             //设置alpha的值
             if (self.delegate && [self.delegate respondsToSelector:@selector(backgroundAlpha:)])
@@ -276,7 +283,14 @@
     
 }
 
+- (void)redurecd
+{
+    timeCount += 0.1;
+}
 
+
+
+#pragma mark - UIScrollViewDelegate
 /**
  缩放图片的时候将图片放在中间
 
@@ -288,19 +302,13 @@
     (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
     CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)?
     (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
-    self.imageV.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
-                                 scrollView.contentSize.height * 0.5 + offsetY);
+    self.imageV.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX, scrollView.contentSize.height * 0.5 + offsetY);
 }
 
 
 - (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     //返回需要缩放的view
     return self.imageV;
-}
-
-- (void)redurecd
-{
-    timeCount += 0.1;
 }
 
 #pragma mark - UIGestureRecognizerDelegate

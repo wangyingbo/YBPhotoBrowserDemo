@@ -120,42 +120,6 @@ CGFloat kDefaultShowAnimationValue = .2;
 }
 
 /**
- 隐藏
-
- @param cell 回到对应的cell
- */
-- (void)hiddenAction:(YBPhotoBrowserCollectionViewCell *)cell
-{
-    NSIndexPath * indexPath = [self.collectionView indexPathForCell:cell];
-    UICollectionViewCell * listCell = [self.listView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
-    for (int i = 0; i < self.originalUrls.count; i++)
-    {
-        if (i == indexPath.item) {
-            [UIView animateWithDuration:2*kDefaultShowAnimationValue animations:^{
-                self.collectionView.backgroundColor = [UIColor clearColor];
-                if (self.listView) {
-                    cell.imageV.frame = [self listCellFrame:listCell];
-                }else {
-                    cell.imageV.frame = self.originRect;
-                }
-                
-                if (self.customViewArray) {
-                    [self.customViewArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                        obj.alpha = 0.;
-                    }];
-                }
-                
-            } completion:^(BOOL finished) {
-                [self removeFromSuperview];
-            }];
-            return;
-        }
-        
-    }
-    
-}
-
-/**
  获取listCell 在window中的对应位置
  
  @param cell cell
@@ -249,6 +213,42 @@ CGFloat kDefaultShowAnimationValue = .2;
             obj.alpha = (alpha == 1)?1:alpha;
         }];
     }
+}
+
+/**
+ 隐藏
+ 
+ @param cell 回到对应的cell
+ */
+- (void)hiddenAction:(YBPhotoBrowserCollectionViewCell *)cell
+{
+    NSIndexPath * indexPath = [self.collectionView indexPathForCell:cell];
+    UICollectionViewCell * listCell = [self.listView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
+    for (int i = 0; i < self.originalUrls.count; i++)
+    {
+        if (i == indexPath.item) {
+            [UIView animateWithDuration:2*kDefaultShowAnimationValue animations:^{
+                self.collectionView.backgroundColor = [UIColor clearColor];
+                if (self.listView) {
+                    cell.imageV.frame = [self listCellFrame:listCell];
+                }else {
+                    cell.imageV.frame = self.originRect;
+                }
+                
+                if (self.customViewArray) {
+                    [self.customViewArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        obj.alpha = 0.;
+                    }];
+                }
+                
+            } completion:^(BOOL finished) {
+                [self removeFromSuperview];
+            }];
+            return;
+        }
+        
+    }
+    
 }
 
 @end
