@@ -45,17 +45,17 @@
 }
 
 
-- (UIImageView *)imageView
+- (UIImageView *)imageV
 {
-    if(_imageView == nil)
+    if(_imageV == nil)
     {
-        _imageView = [[UIImageView alloc] init];
-        [self.scrollView addSubview:_imageView];
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        _imageView.clipsToBounds = YES;
-        _imageView.userInteractionEnabled = YES;
+        _imageV = [[UIImageView alloc] init];
+        [self.scrollView addSubview:_imageV];
+        _imageV.contentMode = UIViewContentModeScaleAspectFill;
+        _imageV.clipsToBounds = YES;
+        _imageV.userInteractionEnabled = YES;
     }
-    return _imageView;
+    return _imageV;
 }
 
 
@@ -134,10 +134,13 @@
             CGFloat offset_y = fmax(offset, 0.5);
             
             CGAffineTransform transform1 = CGAffineTransformMakeTranslation((movePoint.x - moveImgFirstPoint.x), (movePoint.y - moveImgFirstPoint.y));
-            self.imageView.transform = CGAffineTransformScale(transform1, offset_y, offset_y);
+            self.imageV.transform = CGAffineTransformScale(transform1, offset_y, offset_y);
             
             //设置alpha的值
-            [self.delegate backgroundAlpha:offset_y];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(backgroundAlpha:)])
+            {
+                [self.delegate backgroundAlpha:offset_y];
+            }
             
         }
             break;
@@ -146,7 +149,7 @@
             if (timeCount > 1) {
                 [UIView animateWithDuration:0.2 animations:^{
                     CGAffineTransform transform1 = CGAffineTransformMakeTranslation(0,0);
-                    self.imageView.transform = CGAffineTransformScale(transform1, 1, 1);
+                    self.imageV.transform = CGAffineTransformScale(transform1, 1, 1);
                     [self.delegate backgroundAlpha:1];
                 }];
             }else
@@ -213,7 +216,7 @@
     }
     
     //下载图片
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:picURL] placeholderImage:[cache imageFromDiskCacheForKey:key] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:picURL] placeholderImage:[cache imageFromDiskCacheForKey:key] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.hud.label.text = [NSString stringWithFormat:@"%.f%%",(((float)receivedSize/(float)expectedSize) * 100.f) > 0 ?(float)receivedSize/(float)expectedSize * 100:0.f];
             self.hud.progress = (float)receivedSize/(float)expectedSize;
@@ -233,7 +236,7 @@
  */
 - (void)updateImageViewWithImage:(UIImage *)image
 {
-    self.imageView.image = image;
+    self.imageV.image = image;
     CGFloat imageViewY = 0;
     
     CGFloat imageWidth = image.size.width;
@@ -246,18 +249,18 @@
         imageViewY = ([UIScreen mainScreen].bounds.size.height - fitHeight) * 0.5;
     }
     imgOriginF = CGRectMake(5, imageViewY, fitWidth, fitHeight);
-    self.imageView.frame = self.listCellF;
+    self.imageV.frame = self.listCellF;
     //如果是第一次加载需要动画
     if (self.isFirst) {
         self.isFirst = NO;
         [UIView animateWithDuration:0.3 animations:^{
-            self.imageView.frame = self->imgOriginF;
-            self->imgOriginCenter = self.imageView.center;
+            self.imageV.frame = self->imgOriginF;
+            self->imgOriginCenter = self.imageV.center;
         }];
     }else
     {
-        self.imageView.frame = imgOriginF;
-        imgOriginCenter = self.imageView.center;
+        self.imageV.frame = imgOriginF;
+        imgOriginCenter = self.imageV.center;
     }
     self.scrollView.contentSize = CGSizeMake(fitWidth, fitHeight);
 }
@@ -282,14 +285,14 @@
     (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
     CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)?
     (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
-    self.imageView.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
+    self.imageV.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
                                  scrollView.contentSize.height * 0.5 + offsetY);
 }
 
 
 - (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     //返回需要缩放的view
-    return self.imageView;
+    return self.imageV;
 }
 
 - (void)redurecd
@@ -318,7 +321,7 @@
     }
     //判断是否是上下滑动
     CGFloat dirLift = firstTouchPoint.x - touchPoint.x;
-    if (dirLift > -10 && dirLift < 10 && self.imageView.frame.size.height > [UIScreen mainScreen].bounds.size.height) {
+    if (dirLift > -10 && dirLift < 10 && self.imageV.frame.size.height > [UIScreen mainScreen].bounds.size.height) {
         return NO;
     }
     

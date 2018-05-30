@@ -25,6 +25,10 @@
     [self showPhotoBrowser];
 }
 
+- (void)dealloc {
+    NSLog(@"%@-被销毁了",[self class]);
+}
+
 /**
  测试图片浏览器
  */
@@ -71,6 +75,9 @@
     browser.width = 300; // 控件宽度
     [self.view addSubview:browser];
     
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 }
 
 

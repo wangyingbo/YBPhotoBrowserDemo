@@ -24,6 +24,8 @@
     BOOL isFirstLoad;
 }
 
+CGFloat kDefaultShowAnimationValue = .2;
+
 #pragma mark - overwrite
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -69,6 +71,7 @@
     return _pageControl;
 }
 
+#pragma mark - overwrite setter
 - (void)setOriginalUrls:(NSArray *)originalUrls
 {
     _originalUrls = originalUrls;
@@ -77,30 +80,39 @@
     self.pageControl.hidden = originalUrls.count <= 1 ? YES : NO;
 }
 
+- (void)setListView:(id)listView {
+    _listView = listView;
+    
+    // if you see this ,it means that the listView must be a instance of a UITableView or a UICollectionView.
+    NSAssert(([listView isKindOfClass:[UITableView class]] || [listView isKindOfClass:[UICollectionView class]]), @"传入的listView一定要是UITableView或者UICollectionView的实例");
+}
+
 - (void)setIndexPath:(NSIndexPath *)indexPath
 {
     _indexPath = indexPath;
     [self.collectionView setContentOffset:CGPointMake([UIScreen mainScreen].bounds.size.width * indexPath.item,0)];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.pageControl.currentPage = indexPath.item;
+        [self handleCurrentPage:indexPath.item];
     });
 }
 
-- (void)setSelectIndex:(NSInteger)selectIndex {
+- (void)setSelectIndex:(NSInteger)selectIndex
+{
     _selectIndex = selectIndex;
     [self.collectionView setContentOffset:CGPointMake([UIScreen mainScreen].bounds.size.width * selectIndex,0)];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.pageControl.currentPage = selectIndex;
+        [self handleCurrentPage:selectIndex];
     });
 }
-
 
 #pragma mark - private
 - (void)creatView
 {
     [self addSubview:self.collectionView];
     self.collectionView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:kDefaultShowAnimationValue animations:^{
         self.collectionView.backgroundColor = [UIColor blackColor];
     }];
     
@@ -114,17 +126,23 @@
  */
 - (void)hiddenAction:(YBPhotoBrowserCollectionViewCell *)cell
 {
+    NSIndexPath * indexPath = [self.collectionView indexPathForCell:cell];
+    UICollectionViewCell * listCell = [self.listView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
     for (int i = 0; i < self.originalUrls.count; i++)
     {
-        UICollectionViewCell * listCell = [self.listView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        NSIndexPath * indexPath = [self.collectionView indexPathForCell:cell];
         if (i == indexPath.item) {
-            [UIView animateWithDuration:0.4 animations:^{
+            [UIView animateWithDuration:2*kDefaultShowAnimationValue animations:^{
                 self.collectionView.backgroundColor = [UIColor clearColor];
                 if (self.listView) {
-                    cell.imageView.frame = [self listCellFrame:listCell];
+                    cell.imageV.frame = [self listCellFrame:listCell];
                 }else {
-                    cell.imageView.frame = self.originRect;
+                    cell.imageV.frame = self.originRect;
+                }
+                
+                if (self.customViewArray) {
+                    [self.customViewArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        obj.alpha = 0.;
+                    }];
                 }
                 
             } completion:^(BOOL finished) {
@@ -150,16 +168,42 @@
     return cell_window_rect;
 }
 
-- (void)backgroundAlpha:(CGFloat)alpha
-{
-    self.collectionView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:alpha];
-    self.pageControl.alpha = alpha == 1 ?:0;
-}
-
 - (void)show
 {
+    if (!(self.listView && self.indexPath) && !(!self.listView && !self.indexPath)) {//只有一个的值设置了
+       NSAssert(nil!=self.indexPath, @"设置listView后必须要设置indexPath");
+        NSAssert(nil!=self.listView, @"设置indexPath后必须设置listView");
+    }
+    
+    if (self.customViewArray) {
+        [self.customViewArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSAssert([obj isKindOfClass:[UIView class]], @"数组中的obj为view");
+            obj.alpha = 0.;
+            [UIView animateWithDuration:kDefaultShowAnimationValue animations:^{
+                obj.alpha = 1.;
+               [self addSubview:obj];
+            }];
+        }];
+    }
+    
     [[UIApplication sharedApplication].keyWindow addSubview:self];
     self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+}
+
+/**
+ 当当前显示的page改变时，代理回调
+
+ @param currentPage 当前正在显示的page
+ */
+- (void)handleCurrentPage:(NSInteger)currentPage {
+    YBPhotoBrowserCollectionViewCell *cell = (YBPhotoBrowserCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:currentPage inSection:0]];
+    if (!cell.imageV.image) {
+        return;
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(photoBrowserCurrentPage:currentImage:)]) {
+        [self.delegate photoBrowserCurrentPage:currentPage currentImage:cell.imageV.image];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -188,8 +232,23 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    self.pageControl.currentPage = (int)scrollView.contentOffset.x / (int)[UIScreen mainScreen].bounds.size.width;
+    NSInteger currentPage = scrollView.contentOffset.x / (int)[UIScreen mainScreen].bounds.size.width;
+    self.pageControl.currentPage = (int)currentPage;
+    
+    [self handleCurrentPage:currentPage];
 }
 
+#pragma mark - YBPhotoBrowserCollectionViewCellDelegate
+- (void)backgroundAlpha:(CGFloat)alpha
+{
+    self.collectionView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:alpha];
+    self.pageControl.alpha = alpha == 1 ?:0;
+    
+    if (self.customViewArray) {
+        [self.customViewArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.alpha = (alpha == 1)?1:alpha;
+        }];
+    }
+}
 
 @end

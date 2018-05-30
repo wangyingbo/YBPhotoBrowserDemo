@@ -11,6 +11,7 @@
 #import <UIImageView+WebCache.h>
 #define itemCount 3 //每行 3 张图片
 
+#pragma mark - --------- YBBrowserCollectionViewCell ---------
 @interface YBBrowserCollectionViewCell :UICollectionViewCell
 
 @property (nonatomic, strong) UIImageView *imgView;
@@ -42,6 +43,7 @@
 @end
 
 
+#pragma mark - --------- YBBrowser ---------
 @interface YBBrowser ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -64,6 +66,7 @@
         [_collectionView registerClass:[YBBrowserCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
         _collectionView.scrollEnabled = NO;
         _collectionView.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
+        _collectionView.backgroundColor = [UIColor whiteColor];
     }
     return _collectionView;
 }
@@ -155,12 +158,16 @@
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     
     YBPhotoBrowserView * photoView = [[YBPhotoBrowserView alloc]init];
-    photoView.listView = self.collectionView;
+    photoView.listView = collectionView;
     photoView.indexPath = indexPath;
-    //photoView.originRect = [self listCellFrame:cell];
-    //photoView.selectIndex = indexPath.item;
     photoView.originalUrls = (self.smallUrls.count == self.originalUrls.count) ? self.originalUrls : self.smallUrls;
     photoView.smallUrls = self.smallUrls;
+    
+    // 添加自定义的view
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 80, [UIScreen mainScreen].bounds.size.width, 80)];
+    customView.backgroundColor = [UIColor colorWithWhite:0 alpha:.5];
+    photoView.customViewArray = @[customView];
+    
     [photoView show];
 }
 

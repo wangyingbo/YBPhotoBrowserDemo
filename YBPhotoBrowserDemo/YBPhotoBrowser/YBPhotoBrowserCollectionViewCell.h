@@ -24,7 +24,7 @@
 
 @property (nonatomic, assign) CGRect listCellF;
 
-@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *imageV;
 
 @property (nonatomic, strong) NSString * smallURL;
 
