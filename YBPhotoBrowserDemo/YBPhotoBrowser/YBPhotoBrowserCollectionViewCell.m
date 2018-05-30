@@ -270,7 +270,7 @@
  */
 - (void)hiddenAction
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(hiddenAction)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hiddenAction:)]) {
         [self.delegate hiddenAction:self];
     }
     
