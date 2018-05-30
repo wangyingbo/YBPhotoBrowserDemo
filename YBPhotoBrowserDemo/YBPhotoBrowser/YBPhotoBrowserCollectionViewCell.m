@@ -172,7 +172,7 @@
  */
 - (void)imageViewSingleTapAction:(UITapGestureRecognizer *)ges
 {
-    [self.scrollView setZoomScale:1];
+    [self.scrollView setZoomScale:1 animated:YES];
     [self.scrollView setContentOffset:CGPointZero];
     [self hiddenAction];
 }
@@ -184,13 +184,11 @@
  */
 - (void)imageViewDoubleTapAction:(UITapGestureRecognizer *)ges
 {
-    [UIView animateWithDuration:.5 animations:^{
-        if (self.scrollView.zoomScale == 1) {
-            [self.scrollView setZoomScale:2];
-        }else {
-            [self.scrollView setZoomScale:1];
-        }
-    }];
+    if (self.scrollView.zoomScale == 1) {
+        [self.scrollView setZoomScale:2 animated:YES];
+    }else {
+        [self.scrollView setZoomScale:1 animated:YES];
+    }
 }
 
 - (void)setSmallURL:(NSString *)smallURL
