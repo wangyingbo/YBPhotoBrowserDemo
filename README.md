@@ -2,6 +2,10 @@
 
 > ***图片浏览器***
 
+![预览图](https://raw.githubusercontent.com/wangyingbo/YBPhotoBrowserDemo/master/pregif.gif)
+
+![预览图](https://raw.githubusercontent.com/wangyingbo/YBPhotoBrowserDemo/master/gif.gif)
+
 ### 自定义了一个图片浏览器，支持单击消失，双击放大，下拉隐藏，双指放大等功能，支持自定义view配置UI。
 
 可以用`YBBrowser`设置一个九宫格的缩略图显示：
