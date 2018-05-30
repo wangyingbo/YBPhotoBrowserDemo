@@ -65,8 +65,6 @@
 	@optional;
 	- (void)photoBrowserCurrentPage:(NSInteger)currentPage currentImage:(UIImage *)currentImage;
 	@end
-	
-	
-此浏览器是在ELBrowser的基础上修改增加，感谢作者。
+
 
 最后，放上下载链接：[DEMO](https://github.com/wangyingbo/YBPhotoBrowserDemo)，欢迎star。
