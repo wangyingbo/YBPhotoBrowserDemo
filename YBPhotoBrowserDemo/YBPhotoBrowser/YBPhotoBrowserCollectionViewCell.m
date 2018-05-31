@@ -47,8 +47,7 @@
 
 - (UIImageView *)imageV
 {
-    if(!_imageV)
-    {
+    if(!_imageV) {
         _imageV = [[UIImageView alloc] init];
         [self.scrollView addSubview:_imageV];
         _imageV.contentMode = UIViewContentModeScaleAspectFill;
@@ -61,8 +60,7 @@
 
 - (UIScrollView *)scrollView
 {
-    if(!_scrollView)
-    {
+    if(!_scrollView) {
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.delegate = self;
         _scrollView.backgroundColor = [UIColor clearColor];
@@ -105,8 +103,7 @@
     self.scrollView.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.frame.size.height);
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [_timer invalidate];
     _timer = nil;
 }
@@ -194,11 +191,7 @@
  */
 - (void)imageViewDoubleTapAction:(UITapGestureRecognizer *)ges
 {
-    if (self.scrollView.zoomScale == 1) {
-        [self.scrollView setZoomScale:2 animated:YES];
-    }else {
-        [self.scrollView setZoomScale:1 animated:YES];
-    }
+    [self.scrollView setZoomScale:(self.scrollView.zoomScale == 1)?2:1 animated:YES];
 }
 
 - (void)setSmallURL:(NSString *)smallURL

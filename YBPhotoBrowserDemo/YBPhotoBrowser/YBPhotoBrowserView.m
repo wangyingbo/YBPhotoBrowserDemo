@@ -40,13 +40,11 @@ CGFloat kDefaultShowAnimationValue = .2;
     
     self.pageControl.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 90, [UIScreen mainScreen].bounds.size.width, 30);
     self.pageControl.center = CGPointMake(self.center.x, self.frame.size.height - 40);
-    
-    
+
 }
 
 #pragma mark - lazy
-- (UICollectionView *)collectionView
-{
+- (UICollectionView *)collectionView {
     if (!_collectionView) {
         self.layout = [[UICollectionViewFlowLayout alloc]init];
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:self.layout];
@@ -63,8 +61,7 @@ CGFloat kDefaultShowAnimationValue = .2;
     return _collectionView;
 }
 
-- (UIPageControl *)pageControl
-{
+- (UIPageControl *)pageControl {
     if (!_pageControl) {
         _pageControl = [[UIPageControl alloc]init];
     }
@@ -141,7 +138,7 @@ CGFloat kDefaultShowAnimationValue = .2;
     
     if (self.customViewArray) {
         [self.customViewArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSAssert([obj isKindOfClass:[UIView class]], @"数组中的obj为view");
+            NSAssert([obj isKindOfClass:[UIView class]], @"数组中的obj必须要为view");
             obj.alpha = 0.;
             [UIView animateWithDuration:kDefaultShowAnimationValue animations:^{
                 obj.alpha = 1.;
