@@ -138,7 +138,7 @@
             CGAffineTransform transform1 = CGAffineTransformMakeTranslation((movePoint.x - moveImgFirstPoint.x), (movePoint.y - moveImgFirstPoint.y));
             
             CGFloat kScreenH = [UIScreen mainScreen].bounds.size.height;
-            CGFloat m = offset_y*(1+(log10(imgOriginF.size.height)/(CGFloat)log10(kScreenH)*0.713));
+            CGFloat m = offset_y*(1+(log10(imgOriginF.size.height)/(double)log10(kScreenH)*0.713));
             CGFloat scaleV = (imgOriginF.size.height>kScreenH)?(m>1?1:m):offset_y;
             
             self.imageV.transform = CGAffineTransformScale(transform1, scaleV, scaleV);

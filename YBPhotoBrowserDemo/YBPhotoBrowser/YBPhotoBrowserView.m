@@ -71,7 +71,7 @@ CGFloat kDefaultShowAnimationValue = .2;
     return _pageControl;
 }
 
-#pragma mark - overwrite setter
+#pragma mark - setter
 - (void)setOriginalUrls:(NSArray *)originalUrls
 {
     _originalUrls = originalUrls;
