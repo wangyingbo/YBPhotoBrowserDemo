@@ -59,7 +59,7 @@
 	
 	- (void)show;
 
-可以实参代理方法，拿到当前显示的位置和图片
+可以实现代理方法，拿到当前显示的位置和图片
 
 	@protocol YBPhotoBrowserDelegate <NSObject>
 	@optional;
