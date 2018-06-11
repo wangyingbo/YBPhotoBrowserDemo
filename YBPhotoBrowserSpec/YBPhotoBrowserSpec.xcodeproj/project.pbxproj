@@ -83,9 +83,9 @@
 		03CD247720CE6BA0003A3679 = {
 			isa = PBXGroup;
 			children = (
+				03CD248220CE6BA0003A3679 /* YBPhotoBrowserSpec */,
 				03CD24B820CE6C30003A3679 /* YBPhotoBrowserSpecTests */,
 				03CD24B520CE6C30003A3679 /* YBPhotoBrowserSpecUITests */,
-				03CD248220CE6BA0003A3679 /* YBPhotoBrowserSpec */,
 				03CD248120CE6BA0003A3679 /* Products */,
 			);
 			sourceTree = "<group>";
