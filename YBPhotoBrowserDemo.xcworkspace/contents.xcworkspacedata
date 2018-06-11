@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:YBPhotoBrowserSpec/YBPhotoBrowserSpec.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:YBPhotoBrowserDemo.xcodeproj">
    </FileRef>
    <FileRef

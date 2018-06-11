@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03CD248520CE6BA0003A3679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD248420CE6BA0003A3679 /* AppDelegate.m */; };
+		03CD248820CE6BA0003A3679 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD248720CE6BA0003A3679 /* ViewController.m */; };
+		03CD248B20CE6BA0003A3679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD248920CE6BA0003A3679 /* Main.storyboard */; };
+		03CD248D20CE6BA1003A3679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CD248C20CE6BA1003A3679 /* Assets.xcassets */; };
+		03CD249020CE6BA1003A3679 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CD248E20CE6BA1003A3679 /* LaunchScreen.storyboard */; };
+		03CD249320CE6BA1003A3679 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD249220CE6BA1003A3679 /* main.m */; };
+		03CD24BB20CE6C30003A3679 /* YBPhotoBrowserSpecUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD24B620CE6C30003A3679 /* YBPhotoBrowserSpecUITests.m */; };
+		03CD24BC20CE6C30003A3679 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03CD24B720CE6C30003A3679 /* Info.plist */; };
+		03CD24BD20CE6C30003A3679 /* YBPhotoBrowserSpecTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD24B920CE6C30003A3679 /* YBPhotoBrowserSpecTests.m */; };
+		03CD24BE20CE6C30003A3679 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03CD24BA20CE6C30003A3679 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03CD249920CE6BA1003A3679 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03CD247820CE6BA0003A3679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03CD247F20CE6BA0003A3679;
+			remoteInfo = YBPhotoBrowserSpec;
+		};
+		03CD24A420CE6BA2003A3679 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03CD247820CE6BA0003A3679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03CD247F20CE6BA0003A3679;
+			remoteInfo = YBPhotoBrowserSpec;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03CD248020CE6BA0003A3679 /* YBPhotoBrowserSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBPhotoBrowserSpec.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03CD248320CE6BA0003A3679 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		03CD248420CE6BA0003A3679 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		03CD248620CE6BA0003A3679 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		03CD248720CE6BA0003A3679 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		03CD248A20CE6BA0003A3679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03CD248C20CE6BA1003A3679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03CD248F20CE6BA1003A3679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03CD249120CE6BA1003A3679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03CD249220CE6BA1003A3679 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		03CD249820CE6BA1003A3679 /* YBPhotoBrowserSpecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YBPhotoBrowserSpecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03CD24A320CE6BA2003A3679 /* YBPhotoBrowserSpecUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YBPhotoBrowserSpecUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03CD24B620CE6C30003A3679 /* YBPhotoBrowserSpecUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoBrowserSpecUITests.m; sourceTree = "<group>"; };
+		03CD24B720CE6C30003A3679 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03CD24B920CE6C30003A3679 /* YBPhotoBrowserSpecTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPhotoBrowserSpecTests.m; sourceTree = "<group>"; };
+		03CD24BA20CE6C30003A3679 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03CD247D20CE6BA0003A3679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CD249520CE6BA1003A3679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CD24A020CE6BA2003A3679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03CD247720CE6BA0003A3679 = {
+			isa = PBXGroup;
+			children = (
+				03CD24B820CE6C30003A3679 /* YBPhotoBrowserSpecTests */,
+				03CD24B520CE6C30003A3679 /* YBPhotoBrowserSpecUITests */,
+				03CD248220CE6BA0003A3679 /* YBPhotoBrowserSpec */,
+				03CD248120CE6BA0003A3679 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03CD248120CE6BA0003A3679 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03CD248020CE6BA0003A3679 /* YBPhotoBrowserSpec.app */,
+				03CD249820CE6BA1003A3679 /* YBPhotoBrowserSpecTests.xctest */,
+				03CD24A320CE6BA2003A3679 /* YBPhotoBrowserSpecUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03CD248220CE6BA0003A3679 /* YBPhotoBrowserSpec */ = {
+			isa = PBXGroup;
+			children = (
+				03CD248320CE6BA0003A3679 /* AppDelegate.h */,
+				03CD248420CE6BA0003A3679 /* AppDelegate.m */,
+				03CD248620CE6BA0003A3679 /* ViewController.h */,
+				03CD248720CE6BA0003A3679 /* ViewController.m */,
+				03CD248920CE6BA0003A3679 /* Main.storyboard */,
+				03CD248C20CE6BA1003A3679 /* Assets.xcassets */,
+				03CD248E20CE6BA1003A3679 /* LaunchScreen.storyboard */,
+				03CD249120CE6BA1003A3679 /* Info.plist */,
+				03CD249220CE6BA1003A3679 /* main.m */,
+			);
+			path = YBPhotoBrowserSpec;
+			sourceTree = "<group>";
+		};
+		03CD24B520CE6C30003A3679 /* YBPhotoBrowserSpecUITests */ = {
+			isa = PBXGroup;
+			children = (
+				03CD24B620CE6C30003A3679 /* YBPhotoBrowserSpecUITests.m */,
+				03CD24B720CE6C30003A3679 /* Info.plist */,
+			);
+			path = YBPhotoBrowserSpecUITests;
+			sourceTree = "<group>";
+		};
+		03CD24B820CE6C30003A3679 /* YBPhotoBrowserSpecTests */ = {
+			isa = PBXGroup;
+			children = (
+				03CD24B920CE6C30003A3679 /* YBPhotoBrowserSpecTests.m */,
+				03CD24BA20CE6C30003A3679 /* Info.plist */,
+			);
+			path = YBPhotoBrowserSpecTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03CD247F20CE6BA0003A3679 /* YBPhotoBrowserSpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03CD24AC20CE6BA2003A3679 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserSpec" */;
+			buildPhases = (
+				03CD247C20CE6BA0003A3679 /* Sources */,
+				03CD247D20CE6BA0003A3679 /* Frameworks */,
+				03CD247E20CE6BA0003A3679 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YBPhotoBrowserSpec;
+			productName = YBPhotoBrowserSpec;
+			productReference = 03CD248020CE6BA0003A3679 /* YBPhotoBrowserSpec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03CD249720CE6BA1003A3679 /* YBPhotoBrowserSpecTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03CD24AF20CE6BA2003A3679 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserSpecTests" */;
+			buildPhases = (
+				03CD249420CE6BA1003A3679 /* Sources */,
+				03CD249520CE6BA1003A3679 /* Frameworks */,
+				03CD249620CE6BA1003A3679 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03CD249A20CE6BA1003A3679 /* PBXTargetDependency */,
+			);
+			name = YBPhotoBrowserSpecTests;
+			productName = YBPhotoBrowserSpecTests;
+			productReference = 03CD249820CE6BA1003A3679 /* YBPhotoBrowserSpecTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03CD24A220CE6BA2003A3679 /* YBPhotoBrowserSpecUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03CD24B220CE6BA2003A3679 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserSpecUITests" */;
+			buildPhases = (
+				03CD249F20CE6BA2003A3679 /* Sources */,
+				03CD24A020CE6BA2003A3679 /* Frameworks */,
+				03CD24A120CE6BA2003A3679 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03CD24A520CE6BA2003A3679 /* PBXTargetDependency */,
+			);
+			name = YBPhotoBrowserSpecUITests;
+			productName = YBPhotoBrowserSpecUITests;
+			productReference = 03CD24A320CE6BA2003A3679 /* YBPhotoBrowserSpecUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03CD247820CE6BA0003A3679 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "王颖博";
+				TargetAttributes = {
+					03CD247F20CE6BA0003A3679 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					03CD249720CE6BA1003A3679 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 03CD247F20CE6BA0003A3679;
+					};
+					03CD24A220CE6BA2003A3679 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 03CD247F20CE6BA0003A3679;
+					};
+				};
+			};
+			buildConfigurationList = 03CD247B20CE6BA0003A3679 /* Build configuration list for PBXProject "YBPhotoBrowserSpec" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03CD247720CE6BA0003A3679;
+			productRefGroup = 03CD248120CE6BA0003A3679 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03CD247F20CE6BA0003A3679 /* YBPhotoBrowserSpec */,
+				03CD249720CE6BA1003A3679 /* YBPhotoBrowserSpecTests */,
+				03CD24A220CE6BA2003A3679 /* YBPhotoBrowserSpecUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03CD247E20CE6BA0003A3679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CD24BC20CE6C30003A3679 /* Info.plist in Resources */,
+				03CD249020CE6BA1003A3679 /* LaunchScreen.storyboard in Resources */,
+				03CD248D20CE6BA1003A3679 /* Assets.xcassets in Resources */,
+				03CD24BE20CE6C30003A3679 /* Info.plist in Resources */,
+				03CD248B20CE6BA0003A3679 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CD249620CE6BA1003A3679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CD24A120CE6BA2003A3679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03CD247C20CE6BA0003A3679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CD248820CE6BA0003A3679 /* ViewController.m in Sources */,
+				03CD249320CE6BA1003A3679 /* main.m in Sources */,
+				03CD248520CE6BA0003A3679 /* AppDelegate.m in Sources */,
+				03CD24BB20CE6C30003A3679 /* YBPhotoBrowserSpecUITests.m in Sources */,
+				03CD24BD20CE6C30003A3679 /* YBPhotoBrowserSpecTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CD249420CE6BA1003A3679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03CD249F20CE6BA2003A3679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03CD249A20CE6BA1003A3679 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03CD247F20CE6BA0003A3679 /* YBPhotoBrowserSpec */;
+			targetProxy = 03CD249920CE6BA1003A3679 /* PBXContainerItemProxy */;
+		};
+		03CD24A520CE6BA2003A3679 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03CD247F20CE6BA0003A3679 /* YBPhotoBrowserSpec */;
+			targetProxy = 03CD24A420CE6BA2003A3679 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		03CD248920CE6BA0003A3679 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03CD248A20CE6BA0003A3679 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		03CD248E20CE6BA1003A3679 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03CD248F20CE6BA1003A3679 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03CD24AA20CE6BA2003A3679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		03CD24AB20CE6BA2003A3679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03CD24AD20CE6BA2003A3679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserSpec/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserSpec;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		03CD24AE20CE6BA2003A3679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserSpec/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserSpec;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		03CD24B020CE6BA2003A3679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserSpecTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserSpecTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YBPhotoBrowserSpec.app/YBPhotoBrowserSpec";
+			};
+			name = Debug;
+		};
+		03CD24B120CE6BA2003A3679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserSpecTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserSpecTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YBPhotoBrowserSpec.app/YBPhotoBrowserSpec";
+			};
+			name = Release;
+		};
+		03CD24B320CE6BA2003A3679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserSpecUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserSpecUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YBPhotoBrowserSpec;
+			};
+			name = Debug;
+		};
+		03CD24B420CE6BA2003A3679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T9CHG78WE;
+				INFOPLIST_FILE = YBPhotoBrowserSpecUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.wangyingbo.www.YBPhotoBrowserSpecUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YBPhotoBrowserSpec;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03CD247B20CE6BA0003A3679 /* Build configuration list for PBXProject "YBPhotoBrowserSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CD24AA20CE6BA2003A3679 /* Debug */,
+				03CD24AB20CE6BA2003A3679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03CD24AC20CE6BA2003A3679 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CD24AD20CE6BA2003A3679 /* Debug */,
+				03CD24AE20CE6BA2003A3679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03CD24AF20CE6BA2003A3679 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserSpecTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CD24B020CE6BA2003A3679 /* Debug */,
+				03CD24B120CE6BA2003A3679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03CD24B220CE6BA2003A3679 /* Build configuration list for PBXNativeTarget "YBPhotoBrowserSpecUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03CD24B320CE6BA2003A3679 /* Debug */,
+				03CD24B420CE6BA2003A3679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03CD247820CE6BA0003A3679 /* Project object */;
+}
