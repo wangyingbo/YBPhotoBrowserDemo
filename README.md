@@ -6,7 +6,7 @@
 
 ![预览图](https://raw.githubusercontent.com/wangyingbo/YBPhotoBrowserDemo/master/gif.gif)
 
-### 自定义了一个图片浏览器，支持单击消失，双击放大，下拉隐藏，双指放大等功能，支持自定义view配置UI。
+### 自定义了一个图片浏览器，可以显示本地图片或者网络图片，支持单击消失，双击放大，下拉隐藏，双指放大等功能，支持自定义view配置UI。
 
 可以用`YBBrowser`设置一个九宫格的缩略图显示：
 
@@ -15,6 +15,7 @@
     browser.originalUrls = originArr;//大图
     browser.smallUrls = smallArr;//小图
     browser.width = 300; // 控件宽度
+    [browser configuration];
     [self.view addSubview:browser];
 
 也可以直接初始化一个图片浏览器：

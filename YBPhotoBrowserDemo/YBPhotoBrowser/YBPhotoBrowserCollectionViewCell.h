@@ -30,6 +30,8 @@
 
 @property (nonatomic, copy) NSString *picURL;
 
+@property (nonatomic, strong) UIImage *img;
+
 @property (nonatomic, weak) id<YBPhotoBrowserCollectionViewCellDelegate> delegate;
 
 @end

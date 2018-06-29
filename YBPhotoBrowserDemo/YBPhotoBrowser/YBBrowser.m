@@ -64,7 +64,7 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         [_collectionView registerClass:[YBBrowserCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
-        _collectionView.scrollEnabled = NO;
+        _collectionView.scrollEnabled = YES;
         _collectionView.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
         _collectionView.backgroundColor = [UIColor whiteColor];
     }
@@ -85,15 +85,10 @@
     
 }
 
-#pragma mark - private
-- (void)creatView
-{
-    self.collectionView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
-    [self addSubview:self.collectionView];
-    
+- (void)setImages:(NSArray *)images {
+    _images = images;
+    [self.collectionView reloadData];
 }
-
-
 
 - (void)setOriginalUrls:(NSArray *)originalUrls
 {
@@ -103,7 +98,6 @@
 - (void)setSmallUrls:(NSArray *)smallUrls
 {
     _smallUrls = smallUrls;
-    [self.collectionView reloadData];
 }
 
 - (void)setMargin:(CGFloat)margin
@@ -111,23 +105,63 @@
     _margin = margin;
 }
 
-- (void)setWidth:(CGFloat)width
+- (CGFloat)width {
+    if (!_width) {
+        _width = CGRectGetWidth(self.frame);
+    }
+    return _width;
+}
+
+- (BOOL)scrollEnabled {
+    if (!_scrollEnabled) {
+        _scrollEnabled = NO;
+    }
+    return _scrollEnabled;
+}
+
+- (void)setHeight:(CGFloat)height {
+    _height = height;
+}
+
+- (CGFloat)perLineNum {
+    if (!_perLineNum) {
+        _perLineNum = itemCount;
+    }
+    return _perLineNum;
+}
+
+#pragma mark - private
+- (void)creatView
 {
-    _width = width;
-    
+    self.collectionView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
+    [self addSubview:self.collectionView];
+}
+
+
+- (void)configuration {
+    self.collectionView.scrollEnabled = self.scrollEnabled;
+    self.collectionView.alwaysBounceVertical = self.scrollEnabled;
     self.layout.minimumLineSpacing = _margin ;
     self.layout.minimumInteritemSpacing = _margin;
     
-    CGFloat itemW = (width - ((itemCount - 1)* _margin) )/itemCount;
+    CGFloat itemW = (self.width - ((itemCount - 1)* _margin) )/itemCount;
     self.layout.itemSize = CGSizeMake(itemW,itemW);
-
-    NSInteger row = self.smallUrls.count? (self.smallUrls.count- 1) / 3 + 1 :0;
-    CGFloat height = row * (itemW  + _margin) - (row ==0 ?0:_margin);
     
+    NSInteger row;
+    if (self.images) {
+        row = self.images.count? (self.images.count- 1) / self.perLineNum + 1 :0;
+    }else {
+        row = self.smallUrls.count? (self.smallUrls.count- 1) / self.perLineNum + 1 :0;
+    }
+    
+    CGFloat height = self.height?:row * (itemW  + _margin) - (row ==0 ?0:_margin);
     
     CGRect collectionViewFrame = self.collectionView.frame;
-    collectionViewFrame.size = CGSizeMake(width, height);
+    collectionViewFrame.size = CGSizeMake(self.width, height);
     self.collectionView.frame = collectionViewFrame;
+    self.collectionView.center = CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)/2);
+    
+    [self.collectionView reloadData];
 }
 
 /**
@@ -145,11 +179,18 @@
 #pragma mark - UICollectionViewDataSource
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     YBBrowserCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:self.smallUrls[indexPath.item]]];
+    if (self.images) {
+        [cell.imgView setImage:[self.images objectAtIndex:indexPath.item]];
+    }else {
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:self.smallUrls[indexPath.item]]];
+    }
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (self.images) {
+        return self.images.count;
+    }
     return self.smallUrls.count;
 }
 
@@ -160,6 +201,7 @@
     YBPhotoBrowserView * photoView = [[YBPhotoBrowserView alloc]init];
     photoView.listView = collectionView;
     photoView.indexPath = indexPath;
+    photoView.images = self.images;
     photoView.originalUrls = (self.smallUrls.count == self.originalUrls.count) ? self.originalUrls : self.smallUrls;
     photoView.smallUrls = self.smallUrls;
     

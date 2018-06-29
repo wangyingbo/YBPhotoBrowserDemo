@@ -26,7 +26,8 @@
 /** 设置初始选中的位置，需同时设置originRect */
 @property (nonatomic, assign) NSInteger selectIndex;
 
-
+/**本地图片数组*/
+@property (nonatomic, copy) NSArray *images;
 
 @property (nonatomic, strong) NSArray *originalUrls;
 

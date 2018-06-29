@@ -77,6 +77,13 @@ CGFloat kDefaultShowAnimationValue = .2;
     self.pageControl.hidden = originalUrls.count <= 1 ? YES : NO;
 }
 
+- (void)setImages:(NSArray *)images {
+    _images = images;
+    [self.collectionView reloadData];
+    self.pageControl.numberOfPages = images.count;
+    self.pageControl.hidden = images.count <= 1 ? YES : NO;
+}
+
 - (void)setListView:(id)listView {
     _listView = listView;
     
@@ -179,14 +186,21 @@ CGFloat kDefaultShowAnimationValue = .2;
     }else {
         cell.listCellF = self.originRect;
     }
+    if (self.images) {
+        cell.img = self.images[indexPath.item];
+    }else {
+        cell.smallURL = self.smallUrls[indexPath.item];
+        cell.picURL = self.originalUrls[indexPath.item];
+    }
     
-    cell.smallURL = self.smallUrls[indexPath.item];
-    cell.picURL = self.originalUrls[indexPath.item];
     cell.delegate = self;
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (self.images) {
+        return self.images.count;
+    }
     return self.originalUrls.count;
 }
 
@@ -221,7 +235,8 @@ CGFloat kDefaultShowAnimationValue = .2;
 {
     NSIndexPath * indexPath = [self.collectionView indexPathForCell:cell];
     UICollectionViewCell * listCell = [self.listView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
-    for (int i = 0; i < self.originalUrls.count; i++)
+    NSInteger total = self.images?self.images.count:self.originalUrls.count;
+    for (int i = 0; i < total; i++)
     {
         if (i == indexPath.item) {
             [UIView animateWithDuration:2*kDefaultShowAnimationValue animations:^{

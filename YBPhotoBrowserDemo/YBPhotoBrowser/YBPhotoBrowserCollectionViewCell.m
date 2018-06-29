@@ -229,6 +229,13 @@
     }];
 }
 
+- (void)setImg:(UIImage *)img {
+    _img =img;
+    self.imageV.image = img;
+    
+    [self updateImageViewWithImage:img];
+}
+
 /**
  更新图片frame
 
