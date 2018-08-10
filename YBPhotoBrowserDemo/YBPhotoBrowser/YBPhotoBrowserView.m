@@ -156,6 +156,19 @@ CGFloat kDefaultShowAnimationValue = .2;
     
     [[UIApplication sharedApplication].keyWindow addSubview:self];
     self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    
+    if (self.images.count == 0 && self.originalUrls.count == 0) {
+        UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noResource)];
+        ges.numberOfTapsRequired = 1;
+        [self addGestureRecognizer:ges];
+        
+        UIPanGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(noResource)];
+        [self addGestureRecognizer:panGes];
+    }
+}
+
+- (void)noResource {
+    [self removeFromSuperview];
 }
 
 /**
