@@ -199,7 +199,7 @@ CGFloat kDefaultShowAnimationValue = .2;
     }else {
         cell.listCellF = self.originRect;
     }
-    if (self.images) {
+    if (self.images.count>0) {
         cell.img = self.images[indexPath.item];
     }else {
         cell.smallURL = self.smallUrls[indexPath.item];
@@ -211,7 +211,7 @@ CGFloat kDefaultShowAnimationValue = .2;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (self.images) {
+    if (self.images.count>0) {
         return self.images.count;
     }
     return self.originalUrls.count;
@@ -248,7 +248,7 @@ CGFloat kDefaultShowAnimationValue = .2;
 {
     NSIndexPath * indexPath = [self.collectionView indexPathForCell:cell];
     UICollectionViewCell * listCell = [self.listView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
-    NSInteger total = self.images?self.images.count:self.originalUrls.count;
+    NSInteger total = self.images.count>0?self.images.count:self.originalUrls.count;
     for (int i = 0; i < total; i++)
     {
         if (i == indexPath.item) {
