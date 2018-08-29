@@ -13,6 +13,17 @@
 - (void)photoBrowserCurrentPage:(NSInteger)currentPage currentImage:(UIImage *)currentImage;
 @end
 
+
+@interface YBPhotoBrowserModel : NSObject
+/**UIImage实例*/
+@property (nonatomic, strong) UIImage *image;
+/**大图url*/
+@property (nonatomic, copy) NSString *originalUrl;
+/**小图url*/
+@property (nonatomic, copy) NSString *smallUrl;
+@end
+
+
 @interface YBPhotoBrowserView : UIView
 
 /** listView为UICollectionView或者UITableView的实例，listView和indexPath是一组，需同时设置indexPath*/
@@ -29,14 +40,25 @@
 /**本地图片数组*/
 @property (nonatomic, copy) NSArray *images;
 
+/**大图url*/
 @property (nonatomic, strong) NSArray *originalUrls;
 
+/**小图url*/
 @property (nonatomic, strong) NSArray *smallUrls;
+
+/**模型数组*/
+@property (nonatomic, copy) NSArray<YBPhotoBrowserModel *> *modelArray;
 
 @property (nonatomic, weak) id<YBPhotoBrowserDelegate> delegate;
 
+/**自定义的view*/
 @property (nonatomic, copy) NSArray<__kindof UIView *> *customViewArray;
 
+/**
+ 显示方法
+ */
 - (void)show;
 
 @end
+
+

@@ -9,8 +9,10 @@
 #import "YBPhotoBrowserCollectionViewCell.h"
 #import <MBProgressHUD.h>
 #import <UIImageView+WebCache.h>
-#define ImageW [UIScreen mainScreen].bounds.size.width - 10
-
+static CGFloat kSectionLeftMargin = 0;
+#define ImageW [UIScreen mainScreen].bounds.size.width - 0
+#define kDirTopMargin 15
+#define kDirLiftMargin 15
 @interface YBPhotoBrowserCollectionViewCell()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -255,7 +257,7 @@
     if (fitHeight < [UIScreen mainScreen].bounds.size.height) {
         imageViewY = ([UIScreen mainScreen].bounds.size.height - fitHeight) * 0.5;
     }
-    imgOriginF = CGRectMake(5, imageViewY, fitWidth, fitHeight);
+    imgOriginF = CGRectMake(kSectionLeftMargin, imageViewY, fitWidth, fitHeight);
     self.imageV.frame = self.listCellF;
     //如果是第一次加载需要动画
     if (self.isFirst) {
@@ -327,12 +329,12 @@
     //判断是否是左右滑动  滑动区间设置为+-10
     CGPoint touchPoint = [gestureRecognizer locationInView:self.window];
     CGFloat dirTop = firstTouchPoint.y - touchPoint.y;
-    if (dirTop > -10 && dirTop < 10) {
+    if (dirTop > -kDirTopMargin && dirTop < kDirTopMargin) {
         return NO;
     }
     //判断是否是上下滑动
     CGFloat dirLift = firstTouchPoint.x - touchPoint.x;
-    if (dirLift > -10 && dirLift < 10 && self.imageV.frame.size.height > [UIScreen mainScreen].bounds.size.height) {
+    if (dirLift > -kDirLiftMargin && dirLift < kDirLiftMargin && self.imageV.frame.size.height > [UIScreen mainScreen].bounds.size.height) {
         return NO;
     }
     

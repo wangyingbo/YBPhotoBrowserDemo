@@ -84,6 +84,13 @@ CGFloat kDefaultShowAnimationValue = .2;
     self.pageControl.hidden = images.count <= 1 ? YES : NO;
 }
 
+- (void)setModelArray:(NSArray<YBPhotoBrowserModel *> *)modelArray {
+    _modelArray = modelArray;
+    [self.collectionView reloadData];
+    self.pageControl.numberOfPages = modelArray.count;
+    self.pageControl.hidden = modelArray.count<= 1 ?YES : NO;
+}
+
 - (void)setListView:(id)listView {
     _listView = listView;
     
@@ -157,7 +164,7 @@ CGFloat kDefaultShowAnimationValue = .2;
     [[UIApplication sharedApplication].keyWindow addSubview:self];
     self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
-    if (self.images.count == 0 && self.originalUrls.count == 0) {
+    if (self.images.count == 0 && self.originalUrls.count == 0 && self.modelArray.count == 0) {
         UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(noResource)];
         ges.numberOfTapsRequired = 1;
         [self addGestureRecognizer:ges];
@@ -199,7 +206,18 @@ CGFloat kDefaultShowAnimationValue = .2;
     }else {
         cell.listCellF = self.originRect;
     }
-    if (self.images.count>0) {
+    
+    if (self.modelArray.count>0) {
+        YBPhotoBrowserModel *model = [self.modelArray objectAtIndex:indexPath.row];
+        if (model) {
+            if (model.originalUrl.length>0 || model.smallUrl.length>0) {
+                cell.picURL = model.originalUrl;
+                cell.smallURL = model.smallUrl;
+            }else if (model.image) {
+                cell.img = model.image;
+            }
+        }
+    }else if (self.images.count>0) {
         cell.img = self.images[indexPath.item];
     }else {
         cell.smallURL = self.smallUrls[indexPath.item];
@@ -211,10 +229,15 @@ CGFloat kDefaultShowAnimationValue = .2;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (self.images.count>0) {
+    if (self.modelArray.count>0) {
+        return self.modelArray.count;
+    }else if (self.images.count>0) {
         return self.images.count;
+    }else if (self.originalUrls.count>0) {
+        return self.originalUrls.count;
+    }else {
+        return 0;
     }
-    return self.originalUrls.count;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -248,7 +271,12 @@ CGFloat kDefaultShowAnimationValue = .2;
 {
     NSIndexPath * indexPath = [self.collectionView indexPathForCell:cell];
     UICollectionViewCell * listCell = [self.listView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
-    NSInteger total = self.images.count>0?self.images.count:self.originalUrls.count;
+    NSInteger total = 0;
+    if (self.modelArray.count>0) {
+        total = self.modelArray.count;
+    }else {
+        total = self.images.count>0?self.images.count:self.originalUrls.count;
+    }
     for (int i = 0; i < total; i++)
     {
         if (i == indexPath.item) {
@@ -275,5 +303,9 @@ CGFloat kDefaultShowAnimationValue = .2;
     }
     
 }
+
+@end
+
+@implementation YBPhotoBrowserModel
 
 @end
